@@ -1,3 +1,4 @@
+@import url("https://db.onlinewebfonts.com/c/03bd7255184e8e8ad4d2a521fa920b6c?family=PolySans+Neutral");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +16,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+/* 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +25,67 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+
+.image-container {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0; /* Initial state border-radius */
+  transition: border-radius 0.9s ease; /* Smooth animation effect for border-radius */
 }
+
+.image-container:hover {
+  border-radius: 600px; /* Hover state border-radius */
+}
+
+.image-container.exit {
+  border-radius: 0; /* Exit state border-radius (back to initial state) */
+  transition-delay: 0.001ms; /* Delay the transition in exit state */
+}
+
+
+
+@media (max-width: 780px) {
+  .image-container:hover {
+    border-radius: 0px; /* Apply border-radius when the width is greater than or equal to 780px */
+  }
+}
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+
+
+/* Style the scrollbar track */
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #c692ff; /* Color of the thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
+  height: 10px; /* Adjust the height of the scrollbar thumb */
+}
+
+/* Style the scrollbar track when it's in an inactive state */
+::-webkit-scrollbar-track {
+  background-color: black; /* Background color of the track */
+}
+
+/* Style the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background-color: black; /* Color of the scrollbar corner */
+}
+
